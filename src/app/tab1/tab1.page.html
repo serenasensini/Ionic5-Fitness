@@ -12,6 +12,16 @@
       <ion-title size="large">Tab 1</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-button expand="block" (click)="query()">Riepilogo passi</ion-button>
+  <ion-list>
+    <ion-item *ngFor="let day of this.steps">
+      {{day}}
+    </ion-item>
+  </ion-list>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-button expand="block" (click)="sumSteps()" color="secondary">Tot. passi</ion-button>
+  <ion-label>{{this.stepsSum}}</ion-label>
+
+  <ion-button expand="block" (click)="saveData()" color="tertiary">Aggiungi attività</ion-button>
+  <ion-label>{{this.activity}}</ion-label>
 </ion-content>
